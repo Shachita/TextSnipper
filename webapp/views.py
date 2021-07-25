@@ -12,11 +12,14 @@ class Index(View):
     template_name = 'webapp/textsnippet_form.html'
     def get(self,request):
         if 'user' in request.session:
-            context = {}
-            context['form'] = SnippetForm()
-            context['current_user'] = request.session['user']
-            print(context['current_user'])
-            return render(request, self.template_name, context)
+            if request.session['user'] == "creator":
+                context = {}
+                context['form'] = SnippetForm()
+                context['current_user'] = request.session['user']
+                print(context['current_user'])
+                return render(request, self.template_name, context)
+            else:
+                return HttpResponse("Unauthorized Access")
         else:
             return HttpResponseRedirect("/user/login/")
        
