@@ -1,10 +1,9 @@
 {% extends 'base.html' %} {% block content %}
-<div id="shareable_link_page" class="nes-container with-title ">
-    <pre class="code">
-    <code>{{ object.shareable_text }}</code>
-    <!-- <code>{{ object.secret_key }}</code> -->
-    </pre>
-    <a href="{{ object.get_absolute_url }}">127.0.0.1:8000{{ object.get_absolute_url }}</a>
+<div id="shareable_link_page" class="nes-container with-title">
+    <p style="text-align: center; font-size: 2rem; font-weight: bold;">Encrypted Text</p>
+    <p style="text-align: center;">{{ object.shareable_text }}</p>
+    <p style="text-align: center;">Shareable Link</p>
+    <a href="{{ object.get_absolute_url }}"><span style="text-align:center;">127.0.0.1:8000{{ object.get_absolute_url }}</span></a>
 </div>
 
 {% include "webapp/secretkey.html" %} {% endblock %}

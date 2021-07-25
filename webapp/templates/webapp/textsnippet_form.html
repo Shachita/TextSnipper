@@ -1,4 +1,9 @@
 {% extends 'base.html' %} {% block content %}
+
+<form action="/user/logout/">
+    <button>Logout</button>
+</form>
+
 <div id="index_page" class="nes-container">
     <form method="POST">
         {% csrf_token %} {% for field in form %}
@@ -8,5 +13,7 @@
         {% endfor %}
         <br>
         <button type="submit" class="nes-btn is-primary">Get your sharable link here!</button>
+    </form>
+
 </div>
 {% endblock %}

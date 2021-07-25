@@ -1,3 +1,7 @@
+<!-- <form method="POST">
+    <input type="text" name="shareable_link" />
+</form> -->
+
 <!DOCTYPE html>
 <html>
 
@@ -137,39 +141,28 @@
 
 <body>
 
-
+<form action="/user/logout/">
+<button>Logout</button>
+</form>
 
     <div class="container">
         <form method="POST">
             {% csrf_token %}
             <div class="row">
-                <h2 style="text-align:center">Login to Link share App</h2>
+                <h2 style="text-align:center">Enter the Shareable URL</h2>
 
 
 
 
                 <div class="col">
-                    <div class="hide-md-lg">
-                        <p>Or sign in manually:</p>
-                    </div>
-
-                    <input type="text" name="username" placeholder="Username" required>
-                    <input type="password" name="password" placeholder="Password" required>
-                    <input type="submit" value="Login">
+                    <input type="text" name="shareable_link" placeholder="Enter the link" required>
+                    <input type="submit" value="Let's Go!">
                 </div>
 
             </div>
         </form>
     </div>
 
-    <div class="bottom-container">
-        <div class="row">
-            <div class="col">
-                <a href="#" style="color:white" class="btn">Sign up</a>
-            </div>
-
-        </div>
-    </div>
 
 </body>
 
