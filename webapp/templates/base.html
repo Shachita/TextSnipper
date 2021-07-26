@@ -99,6 +99,9 @@
         <a href="{% url 'webapp:index' %}">
         </a>
     </center>
+    <form class="logout-form" action="/user/logout/">
+        <button class="logout-button">Logout</button>
+    </form>
     {% block content %} {% endblock content %}
 </body>
 
