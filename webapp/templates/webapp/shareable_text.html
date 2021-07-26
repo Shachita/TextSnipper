@@ -1,9 +1,34 @@
 {% extends 'base.html' %} {% block content %}
 <div id="shareable_link_page" class="nes-container with-title">
-    <p style="text-align: center; font-size: 2rem; font-weight: bold;">Encrypted Text</p>
+    <h1 style="text-align: center; font-size: 2rem; margin-bottom: 1rem;">Encrypted Text</h1>
     <p style="text-align: center;">{{ object.shareable_text }}</p>
-    <p style="text-align: center;">Shareable Link</p>
-    <a href="{{ object.get_absolute_url }}"><span style="text-align:center;">127.0.0.1:8000{{ object.get_absolute_url }}</span></a>
+    <div style="display: flex; align-items: center;justify-content: center; margin: 1rem 0;">
+        <span style="margin-right: 1rem">Shareable Link: </span>
+        <a href="{{ object.get_absolute_url }}">
+            <span style="text-align:center;">127.0.0.1:8000{{ object.get_absolute_url }}</span>
+        </a>
+        <button class="nes-btn" id="copy-button" onclick="copyText('127.0.0.1:8000{{ object.get_absolute_url }}')">Copy</button>
+    </div>
+
+
+    <script>
+        function copyText(val) {
+            const el = document.createElement('textarea');
+            el.value = val;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+
+            document.getElementById('copy-button').innerText = 'Copied'
+
+            setTimeout(() => {
+                document.getElementById('copy-button').innerText = 'Copy'
+            }, 3000)
+
+        }
+    </script>
+    <hr>
 </div>
 
 {% include "webapp/secretkey.html" %} {% endblock %}
