@@ -44,8 +44,6 @@ class ShareableLink(DetailView):
 
     def get(self, request, slug):
         if 'user' in request.session:
-            # context['current_user'] = request.session['user']
-            # print(context['current_user'])
             paste_obj = get_object_or_404(TextSnippet, slug=slug)
             text = paste_obj.shareable_text
             error = ''
