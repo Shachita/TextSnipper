@@ -1,18 +1,20 @@
 {% extends 'base.html' %} {% block content %}
 
 <form class="logout-form" action="/user/logout/">
-    <button>Logout</button>
+    <button class="logout-button">Logout</button>
 </form>
 
 <div id="index_page" class="nes-container">
     <form method="POST">
         {% csrf_token %} {% for field in form %}
         <div class="container">
-            {{ field.errors }} {{ field.label_tag }}<br> {{ field }}
+            {{ field.errors }} {{ field.label_tag }}{{ field }}
         </div>
         {% endfor %}
         <br>
-        <button type="submit" class="nes-btn is-primary">Get your sharable link here!</button>
+        <div style="display: flex; justify-content: center; margin-bottom: 20px;">
+            <button type="submit" class="nes-btn is-primary">Get your sharable link here!</button>
+        </div>
     </form>
 
 </div>
