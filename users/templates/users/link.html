@@ -44,6 +44,16 @@
             opacity: 1;
         }
         
+        .logout-button {
+            all: unset;
+            padding: 5px 10px;
+            background: #dd4b39;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px
+        }
+        
         .fb {
             background-color: #3B5998;
             color: white;
@@ -137,8 +147,9 @@
 
 <body>
 
-    <form action="/user/logout/">
-        <button>Logout</button>
+    <form action="/user/logout/" style="display: flex;
+    justify-content: flex-end">
+        <button class="logout-button">Logout</button>
     </form>
 
     <div class="container">
