@@ -26,7 +26,7 @@ SECRET_KEY = 'rcm@dn*pdbecanz8ygb@9r#+hq6zia*7td6-vijr#h62b9)4-&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['text-snipper.herokuapp.com']
 
 
 # Application definition
