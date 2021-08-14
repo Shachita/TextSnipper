@@ -26,7 +26,7 @@ SECRET_KEY = 'rcm@dn*pdbecanz8ygb@9r#+hq6zia*7td6-vijr#h62b9)4-&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['text-snipper.herokuapp.com']
+ALLOWED_HOSTS = ['text-snipper.herokuapp.com', '49.36.38.126', 'ruby.db.elephantsql.com']
 
 
 # Application definition
@@ -79,8 +79,12 @@ WSGI_APPLICATION = 'TextSnippets.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'hzjikqdm',
+        'USER': 'hzjikqdm',
+        'PASSWORD': 'SG6YQyYkJYVCIZd7Vj9a5HESfO0GoxdY',
+        'HOST': 'ruby.db.elephantsql.com', 
+        'PORT': ''
     }
 }
 
